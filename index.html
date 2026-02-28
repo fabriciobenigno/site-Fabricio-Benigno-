@@ -17,11 +17,7 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-
-html{
-    scroll-behavior:smooth;
-}
-
+html{scroll-behavior:smooth;}
 body{
     font-family:'Segoe UI', Arial, sans-serif;
     background:var(--fundo);
@@ -35,7 +31,6 @@ body{
     color:white;
     padding:70px 20px;
 }
-
 .hero-container{
     max-width:1100px;
     margin:auto;
@@ -45,7 +40,6 @@ body{
     text-align:center;
     gap:25px;
 }
-
 .hero img{
     width:150px;
     height:150px;
@@ -54,58 +48,14 @@ body{
     border:4px solid rgba(255,255,255,0.2);
     box-shadow:0 20px 45px rgba(0,0,0,0.4);
 }
-
-.hero h1{
-    font-size:34px;
-    letter-spacing:1px;
-}
-
+.hero h1{font-size:34px;letter-spacing:1px;}
 .hero .autoridade{
     font-size:16px;
     margin-top:8px;
     opacity:0.95;
     font-weight:500;
 }
-
-.hero p{
-    font-size:15px;
-    opacity:0.9;
-}
-
-.hero-buttons{
-    margin-top:20px;
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.hero-buttons a{
-    padding:12px 22px;
-    border-radius:30px;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.btn-white{
-    background:white;
-    color:var(--azul);
-}
-
-.btn-white:hover{
-    background:#e2e8f0;
-}
-
-.btn-outline{
-    border:1px solid white;
-    color:white;
-}
-
-.btn-outline:hover{
-    background:rgba(255,255,255,0.15);
-}
+.hero p{font-size:15px;opacity:0.9;}
 
 /* MENU */
 nav{
@@ -113,14 +63,12 @@ nav{
     border-bottom:1px solid var(--borda);
     padding:15px 10px;
 }
-
 .menu{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     gap:10px;
 }
-
 .menu a{
     display:flex;
     align-items:center;
@@ -134,12 +82,7 @@ nav{
     transition:0.3s;
     background:white;
 }
-
-.menu img{
-    width:16px;
-    height:16px;
-}
-
+.menu img{width:16px;height:16px;}
 .menu a:hover{
     background:var(--azul);
     color:white;
@@ -155,36 +98,20 @@ section{
     transform:translateY(30px);
     transition:all 0.8s ease;
 }
-
-section.visible{
-    opacity:1;
-    transform:translateY(0);
-}
-
+section.visible{opacity:1;transform:translateY(0);}
 .section-header{
     display:flex;
     align-items:center;
     gap:10px;
     margin-bottom:30px;
 }
-
 .section-header img{
-    width:22px;
-    height:22px;
-}
-
-/* Ícone destaque Sobre */
-.sobre-header .icone-destaque{
-    width:60px; /* maior que os demais */
+    width:60px;
     height:60px;
     object-fit:contain;
     filter:drop-shadow(0 8px 18px rgba(11,61,145,0.40));
 }
-
-section h2{
-    font-size:26px;
-}
-
+section h2{font-size:26px;}
 .card{
     background:var(--card);
     padding:35px;
@@ -193,60 +120,28 @@ section h2{
     box-shadow:0 10px 30px rgba(0,0,0,0.05);
     transition:0.3s;
 }
-
-.card:hover{
-    transform:translateY(-6px);
-}
-
-.card p{
-    font-size:16px;
-    color:var(--texto-sec);
-}
-
-.buttons{
-    margin-top:20px;
-}
-
+.card:hover{transform:translateY(-6px);}
+.card p{font-size:16px;color:var(--texto-sec);}
+.buttons{margin-top:20px;}
 .buttons a{
     display:inline-flex;
     align-items:center;
-    gap:8px;
-    padding:10px 18px;
-    font-size:14px;
+    justify-content:center;
+    padding:10px 18px; /* tamanho original mantido */
+    font-size:14px; /* tamanho original mantido */
     border-radius:25px;
     text-decoration:none;
     font-weight:600;
     transition:0.3s;
-}
-
-.buttons img{
-    width:16px;
-    height:16px;
-}
-
-.btn-primary{
-    background:var(--azul);
-    color:white;
-}
-
-.btn-primary:hover{
-    background:var(--azul-escuro);
-}
-
-.btn-light{
     background:white;
     color:var(--azul);
     border:1px solid var(--azul);
 }
-
-.btn-light:hover{
+.buttons a:hover{
     background:var(--azul);
     color:white;
 }
-
-.institucional{
-    background:#eef2f8;
-}
+.institucional{background:#eef2f8;}
 
 /* BOTÃO FLUTUANTE */
 .whatsapp-float{
@@ -264,15 +159,8 @@ section h2{
     z-index:999;
     transition:0.3s;
 }
-
-.whatsapp-float:hover{
-    transform:scale(1.1);
-}
-
-.whatsapp-float img{
-    width:26px;
-    height:26px;
-}
+.whatsapp-float:hover{transform:scale(1.1);}
+.whatsapp-float img{width:26px;height:26px;}
 
 /* FOOTER */
 footer{
@@ -286,28 +174,11 @@ footer{
 
 /* RESPONSIVO */
 @media(min-width:768px){
-.hero{
-    padding:110px 20px;
-}
-
-.hero-container{
-    flex-direction:row;
-    text-align:left;
-    justify-content:center;
-    gap:70px;
-}
-
-.hero-text{
-    max-width:520px;
-}
-
-.hero h1{
-    font-size:46px;
-}
-
-.hero .autoridade{
-    font-size:18px;
-}
+.hero{padding:110px 20px;}
+.hero-container{flex-direction:row;text-align:left;justify-content:center;gap:70px;}
+.hero-text{max-width:520px;}
+.hero h1{font-size:46px;}
+.hero .autoridade{font-size:18px;}
 }
 </style>
 </head>
@@ -320,18 +191,9 @@ footer{
         <div class="hero-text">
             <h1>Fabricio Benigno</h1>
             <div class="autoridade">
-                Soluções integradas em Música, Educação e Comunicação Digital.
+                Tutor de polo da UniCesumar, Profissional em Música e Soluções Digitais.
             </div>
-            <p>Música • Educação • Audiovisual • Soluções Digitais</p>
-
-            <div class="hero-buttons">
-                <a href="https://wa.me/5585996886661?text=Quero%20contratar%20uma%20apresentação" target="_blank" class="btn-white">
-                    Contato Profissional
-                </a>
-                <a href="https://wa.me/5585996886661?text=Quero%20me%20matricular" target="_blank" class="btn-outline">
-                    Faça aqui sua matrícula
-                </a>
-            </div>
+            <p>Educação • Música • Audiovisual • Consultoria Digital</p>
         </div>
     </div>
 </div>
@@ -339,59 +201,42 @@ footer{
 <nav>
     <div class="menu">
         <a href="#musica"><img src="musica.png">Música</a>
-        <a href="https://wa.me/5585996886661?text=Quero%20me%20matricular"><img src="inscrição.png">Faça aqui sua matrícula</a>
+        <a href="#inscreva-se"><img src="icone.ico">Inscreva-se</a>
         <a href="#audiovisual"><img src="audiovisual.png">Audiovisual</a>
         <a href="#digital"><img src="solucoes.png">Soluções</a>
         <a href="#parcerias"><img src="parcerias.png">Parcerias</a>
     </div>
 </nav>
 
-<section id="sobre">
-    <div class="section-header sobre-header">
-        <img src="vida.png" class="icone-destaque">
-        <h2>Sobre Fabricio Benigno</h2>
-    </div>
-    <div class="card">
-        <p>
-            Profissional com atuação multidisciplinar nas áreas de música, educação e soluções digitais,
-            integrando criatividade, estratégia e excelência técnica em projetos institucionais e culturais.
-        </p>
-    </div>
-</section>
-
-<section id="musica">
+<section id="inscreva-se" class="institucional">
     <div class="section-header">
-        <img src="musica.png">
-        <h2>Música</h2>
+        <img src="icone.ico" class="icone-secao">
+        <h2>Inscreva-se</h2>
     </div>
     <div class="card">
         <p>
-            Atuação musical profissional para eventos institucionais, sociais e culturais,
-            com repertório eclético e presença consolidada.
+            Atuo como tutor de polo da UniCesumar, oferecendo suporte aos alunos durante todo o percurso acadêmico, incluindo orientação sobre matrícula, esclarecimento de dúvidas e acompanhamento das etapas do curso, garantindo uma experiência organizada e eficiente.
         </p>
         <div class="buttons">
-            <a href="https://wa.me/5585996886661?text=Quero%20contratar%20uma%20apresentação" target="_blank" class="btn-primary">
-                <img src="musica.png">
-                Contratar Apresentação
+            <a href="https://wa.me/55859985018590?text=oii!%20quero%20mais%20informações%20sobre%20o%20curso%20***********" target="_blank">
+                Faça aqui sua matrícula
             </a>
         </div>
     </div>
 </section>
 
-<section class="institucional">
+<section id="musica">
     <div class="section-header">
-        <img src="icone.ico">
-        <h2>Educação</h2>
+        <img src="musica.png" class="icone-secao">
+        <h2>Música</h2>
     </div>
     <div class="card">
         <p>
-            Orientação acadêmica especializada e suporte completo no processo educacional,
-            com acompanhamento institucional focado em excelência.
+            Atuo com apresentações musicais profissionais para eventos sociais e culturais, oferecendo planejamento de repertório, produção e execução musical personalizada, garantindo qualidade técnica e experiência marcante.
         </p>
         <div class="buttons">
-            <a href="https://wa.me/5585996886661?text=Quero%20me%20matricular" class="btn-light" target="_blank">
-                <img src="inscrição.png">
-                Faça aqui sua matrícula
+            <a href="https://wa.me/5585996886661?text=oii!%20quero%20mais%20informações%20para%20fechar%20uma%20apresentação%20com%20você" target="_blank">
+                Contratar Agora
             </a>
         </div>
     </div>
@@ -399,17 +244,16 @@ footer{
 
 <section id="audiovisual">
     <div class="section-header">
-        <img src="audiovisual.png">
+        <img src="audiovisual.png" class="icone-secao">
         <h2>Produção Audiovisual</h2>
     </div>
     <div class="card">
         <p>
-            Produção e edição de conteúdos musicais e institucionais
-            com identidade visual profissional e qualidade técnica.
+            Produção e edição de conteúdos audiovisuais para projetos musicais e institucionais, com identidade visual consistente, qualidade técnica e alinhamento às necessidades de cada projeto.
         </p>
         <div class="buttons">
-            <a href="https://wa.me/5585996886661?text=Tenho%20interesse%20em%20produção%20audiovisual" target="_blank" class="btn-primary">
-                Saiba Mais
+            <a href="https://wa.me/5585996886661?text=oii!%20quero%20mais%20informações%20para%20a%20produção%20de%20um%20video%20que%20quero%20fazer" target="_blank">
+                Solicitar Produção
             </a>
         </div>
     </div>
@@ -417,17 +261,16 @@ footer{
 
 <section id="digital">
     <div class="section-header">
-        <img src="solucoes.png">
+        <img src="solucoes.png" class="icone-secao">
         <h2>Soluções Digitais</h2>
     </div>
     <div class="card">
         <p>
-            Desenvolvimento e estruturação de páginas funcionais,
-            estratégias digitais e presença online profissional.
+            Consultoria em soluções digitais, incluindo criação e otimização de sites, estratégias digitais e presença online profissional, voltadas para instituições, profissionais e projetos que buscam resultados práticos.
         </p>
         <div class="buttons">
-            <a href="https://wa.me/5585996886661?text=Quero%20saber%20mais%20sobre%20soluções%20digitais" target="_blank" class="btn-primary">
-                Saiba Mais
+            <a href="https://wa.me/5585996886661?text=oii!%20tenho%20ideias%20para%20um%20site,%20pode%20me%20ajudar%20?" target="_blank">
+                Solicitar Consultoria
             </a>
         </div>
     </div>
@@ -435,17 +278,16 @@ footer{
 
 <section id="parcerias">
     <div class="section-header">
-        <img src="parcerias.png">
+        <img src="parcerias.png" class="icone-secao">
         <h2>Parcerias</h2>
     </div>
     <div class="card">
         <p>
-            Disponível para colaborações artísticas, educacionais e institucionais,
-            ampliando alcance e impacto profissional.
+            Aberto a parcerias estratégicas em Música e Soluções Digitais, com foco em ampliar alcance, criar experiências de valor e apoiar projetos institucionais ou culturais.
         </p>
         <div class="buttons">
-            <a href="https://wa.me/5585996886661?text=Tenho%20interesse%20em%20uma%20parceria" target="_blank" class="btn-primary">
-                Saiba Mais
+            <a href="https://wa.me/5585996886661?text=oii!%20quero%20mais%20informações%20sobre%20uma%20parceria" target="_blank">
+                Propor Parceria
             </a>
         </div>
     </div>
@@ -453,16 +295,15 @@ footer{
 
 <footer>
     © 2026 Fabricio Benigno<br>
-    Música • Educação • Audiovisual • Soluções Digitais
+    Música • Inscreva-se • Audiovisual • Soluções Digitais
 </footer>
 
-<a href="https://wa.me/5585996886661" target="_blank" class="whatsapp-float">
-    <img src="icone.ico" alt="WhatsApp">
+<a href="https://wa.me/55859985018590?text=oii!%20quero%20mais%20informações%20sobre%20o%20curso%20***********" target="_blank" class="whatsapp-float" title="Faça aqui sua matrícula">
+    <img src="icone.ico" alt="Faça aqui sua matrícula">
 </a>
 
 <script>
 const sections = document.querySelectorAll("section");
-
 window.addEventListener("scroll", () => {
     const trigger = window.innerHeight * 0.85;
     sections.forEach(section => {
