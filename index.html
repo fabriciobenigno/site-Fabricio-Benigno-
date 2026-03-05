@@ -1,187 +1,404 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Fabricio Benigno | Música • Educação • Audiovisual • Soluções Digitais</title>
+
+<!-- Mantém seus ativos (não altera funcionalidades) -->
+<link rel="icon" href="logotipo.ico" />
+<link rel="shortcut icon" href="logo.ico" />
+
+<!-- Fonte moderna (não altera funcionalidades do site) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
 :root{
-    --azul:#0b3d91;
-    --azul-escuro:#082c66;
-    --fundo:#f4f7fb;
-    --card:#ffffff;
-    --texto:#1e293b;
-    --texto-sec:#475569;
-    --borda:#e2e8f0;
+  /* Base (mantendo seu azul) */
+  --azul:#0b3d91;
+  --azul-escuro:#082c66;
+
+  /* Neutros mais “premium” */
+  --fundo:#f4f7fb;
+  --card:#ffffff;
+  --texto:#0f172a;
+  --texto-sec:#475569;
+  --borda:#e2e8f0;
+
+  /* Acento sutil */
+  --azul-claro:#60a5fa;
+
+  /* Layout */
+  --max:1120px;
+  --raio:16px;
+
+  /* Sombra profissional (2 níveis) */
+  --s1: 0 10px 30px rgba(2, 6, 23, 0.06);
+  --s2: 0 18px 50px rgba(2, 6, 23, 0.10);
+
+  /* Transições */
+  --t: 220ms cubic-bezier(.2,.8,.2,1);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
-    font-family:'Segoe UI', Arial, sans-serif;
-    background:var(--fundo);
-    color:var(--texto);
-    line-height:1.6;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.7;
 }
 
-/* HERO */
+/* Melhor leitura e “acabamento” */
+a{color:inherit;}
+img{max-width:100%;display:block;}
+::selection{background: rgba(96,165,250,.25);}
+
+/* =========================
+   HERO (mais premium)
+========================= */
 .hero{
-    background:linear-gradient(135deg,#0b3d91,#082c66);
-    color:white;
-    padding:70px 20px;
+  position:relative;
+  color:#fff;
+  padding: 76px 20px 64px;
+  background:
+    radial-gradient(1200px 500px at 20% 10%, rgba(96,165,250,.22), transparent 60%),
+    radial-gradient(900px 420px at 80% 20%, rgba(255,255,255,.12), transparent 55%),
+    linear-gradient(135deg, var(--azul), var(--azul-escuro));
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(2,6,23,.18), rgba(2,6,23,.32));
+  pointer-events:none;
 }
 .hero-container{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:25px;
+  position:relative;
+  z-index:1;
+  max-width: var(--max);
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap: 22px;
 }
 .hero img{
-    width:150px;
-    height:150px;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid rgba(255,255,255,0.2);
-    box-shadow:0 20px 45px rgba(0,0,0,0.4);
-}
-.hero h1{font-size:34px;letter-spacing:1px;}
-.hero .autoridade{
-    font-size:16px;
-    margin-top:8px;
-    opacity:0.95;
-    font-weight:500;
-}
-.hero p{font-size:15px;opacity:0.9;}
+  width: 156px;
+  height: 156px;
+  object-fit: cover;
+  border-radius: 999px;
 
-/* MENU */
+  /* Anel duplo + glow suave */
+  border: 2px solid rgba(255,255,255,.30);
+  outline: 8px solid rgba(255,255,255,.10);
+
+  box-shadow:
+    0 22px 60px rgba(0,0,0,.35),
+    0 0 0 1px rgba(255,255,255,.08) inset;
+}
+.hero h1{
+  font-size: 34px;
+  letter-spacing: .2px;
+  font-weight: 700;
+}
+.hero .autoridade{
+  margin-top: 8px;
+  font-size: 15px;
+  opacity: .96;
+  font-weight: 500;
+}
+.hero p{
+  font-size: 15px;
+  opacity: .92;
+}
+
+/* =========================
+   NAV (sticky, sem quebrar nada)
+========================= */
 nav{
-    background:white;
-    border-bottom:1px solid var(--borda);
-    padding:15px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 998;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(226,232,240,.9);
 }
 .menu{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 12px 12px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap: 10px;
 }
 .menu a{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    padding:8px 14px;
-    font-size:13px;
-    text-decoration:none;
-    color:var(--texto);
-    border:1px solid var(--borda);
-    border-radius:20px;
-    transition:0.3s;
-    background:white;
+  display:flex;
+  align-items:center;
+  gap: 9px;
+
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration:none;
+
+  color: var(--texto);
+  border: 1px solid rgba(226,232,240,.9);
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 1px 0 rgba(2,6,23,.02);
+
+  transition: transform var(--t), background var(--t), color var(--t), border-color var(--t), box-shadow var(--t);
 }
 .menu a img{
-    width:16px;
-    height:16px;
+  width:16px;
+  height:16px;
 }
 .menu a:hover{
-    background:var(--azul);
-    color:white;
-    border-color:var(--azul);
+  background: rgba(11,61,145,.10);
+  border-color: rgba(11,61,145,.25);
+  box-shadow: 0 10px 24px rgba(2,6,23,.08);
+  transform: translateY(-1px);
+}
+.menu a:focus-visible{
+  outline: 3px solid rgba(96,165,250,.65);
+  outline-offset: 2px;
 }
 
-/* SEÇÕES */
+/* =========================
+   SEÇÕES (hierarquia + acabamento)
+========================= */
 section{
-    padding:80px 20px;
-    max-width:1100px;
-    margin:auto;
-    opacity:0;
-    transform:translateY(30px);
-    transition:all 0.8s ease;
+  padding: 64px 20px;
+  max-width: var(--max);
+  margin:auto;
+
+  opacity:0;
+  transform: translateY(18px);
+  transition: opacity 700ms cubic-bezier(.2,.8,.2,1), transform 700ms cubic-bezier(.2,.8,.2,1);
 }
 section.visible{opacity:1;transform:translateY(0);}
+
 .section-header{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:30px;
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 .section-header img{
-    width:60px;
-    height:60px;
-    object-fit:contain;
-    filter:drop-shadow(0 8px 18px rgba(11,61,145,0.40));
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 22px rgba(11,61,145,.25));
 }
-section h2{font-size:26px;}
+section h2{
+  font-size: 26px;
+  letter-spacing: .2px;
+  font-weight: 700;
+  position: relative;
+}
+section h2::after{
+  content:"";
+  display:block;
+  width: 56px;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, rgba(96,165,250,.85), rgba(11,61,145,.15));
+}
+
+/* Fundo institucional mais refinado */
+.institucional{
+  background: linear-gradient(180deg, rgba(238,242,248,.9), rgba(244,247,251,0));
+  border-radius: calc(var(--raio) + 8px);
+}
+
+/* =========================
+   CARD (profissional)
+========================= */
 .card{
-    background:var(--card);
-    padding:35px;
-    border-radius:14px;
-    border:1px solid var(--borda);
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
-    transition:0.3s;
+  background: var(--card);
+  padding: 34px;
+  border-radius: var(--raio);
+  border: 1px solid rgba(226,232,240,.9);
+  box-shadow: var(--s1);
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
 }
-.card:hover{transform:translateY(-6px);}
-.card p{font-size:16px;color:var(--texto-sec);}
-.buttons{margin-top:20px;}
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--s2);
+  border-color: rgba(11,61,145,.18);
+}
+.card p{
+  font-size: 16px;
+  color: var(--texto-sec);
+}
+
+/* =========================
+   BOTÕES (CTA forte e elegante)
+========================= */
+.buttons{margin-top: 18px;}
 .buttons a{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:10px 18px;
-    font-size:14px;
-    border-radius:25px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
-    background:white;
-    color:var(--azul);
-    border:1px solid var(--azul);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height: 44px;
+  padding: 10px 18px;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .15px;
+
+  border-radius: 999px;
+  text-decoration:none;
+
+  /* Primário (mais profissional) */
+  background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
+  color: #fff;
+  border: 1px solid rgba(11,61,145,.15);
+  box-shadow: 0 10px 22px rgba(11,61,145,.18);
+
+  transition: transform var(--t), box-shadow var(--t), filter var(--t);
 }
 .buttons a:hover{
-    background:var(--azul);
-    color:white;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(11,61,145,.22);
+  filter: brightness(1.05);
 }
-.institucional{background:#eef2f8;}
+.buttons a:active{transform: translateY(0px);}
+.buttons a:focus-visible{
+  outline: 3px solid rgba(96,165,250,.65);
+  outline-offset: 3px;
+}
 
-/* BOTÃO FLUTUANTE */
+/* =========================
+   BOTÃO FLUTUANTE (acabamento premium)
+========================= */
 .whatsapp-float{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
-    z-index:999;
-    transition:0.3s;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+
+  background:#25D366;
+  width:56px;
+  height:56px;
+  border-radius:999px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow: 0 14px 34px rgba(2,6,23,.22);
+  border: 2px solid rgba(255,255,255,.85);
+
+  z-index:999;
+  transition: transform var(--t), box-shadow var(--t), filter var(--t);
 }
-.whatsapp-float:hover{transform:scale(1.1);}
+.whatsapp-float:hover{
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 18px 46px rgba(2,6,23,.26);
+  filter: brightness(1.02);
+}
 .whatsapp-float img{width:26px;height:26px;}
 
-/* FOOTER */
+/* =========================
+   FOOTER (clean)
+========================= */
 footer{
-    text-align:center;
-    padding:30px 20px;
-    font-size:13px;
-    color:#64748b;
-    background:white;
-    border-top:1px solid var(--borda);
+  text-align:center;
+  padding: 30px 20px;
+  font-size: 13px;
+  color:#64748b;
+  background: rgba(255,255,255,.92);
+  border-top: 1px solid rgba(226,232,240,.9);
 }
 
-/* RESPONSIVO */
+/* =========================
+   VERIFICADO (clicável para Instagram) - MAIOR
+========================= */
+.nome-verificado{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px; /* mais respiro */
+}
+
+/* Link do verificado (sem sublinhado e com interação) */
+.verificado-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 999px;
+  outline: none;
+}
+
+.verificado{
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(96,165,250,.18);
+  border: 1px solid rgba(96,165,250,.35);
+  box-shadow: 0 12px 26px rgba(2,6,23,.20);
+  transform: translateY(2px);
+  transition: transform var(--t), filter var(--t), box-shadow var(--t);
+}
+
+.verificado svg{
+  width: 22px;
+  height: 22px;
+}
+
+.verificado svg path:first-child{ fill: #1d9bf0; } /* azul do “verificado” */
+.verificado svg path:last-child{ fill: #ffffff; }  /* check branco */
+
+.verificado-link:hover .verificado{
+  transform: translateY(1px) scale(1.03);
+  filter: brightness(1.03);
+  box-shadow: 0 16px 34px rgba(2,6,23,.22);
+}
+.verificado-link:focus-visible{
+  outline: 3px solid rgba(96,165,250,.75);
+  outline-offset: 4px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
 @media(min-width:768px){
-.hero{padding:110px 20px;}
-.hero-container{flex-direction:row;text-align:left;justify-content:center;gap:70px;}
-.hero-text{max-width:520px;}
-.hero h1{font-size:46px;}
-.hero .autoridade{font-size:18px;}
+  .hero{padding: 112px 20px 92px;}
+  .hero-container{
+    flex-direction:row;
+    text-align:left;
+    justify-content:center;
+    gap: 72px;
+  }
+  .hero-text{max-width: 560px;}
+  .hero h1{font-size: 52px;}
+  .hero .autoridade{font-size: 18px;}
+  .hero p{font-size: 16px;}
+  section{padding: 72px 20px;}
+  .section-header{margin-bottom: 22px;}
+  .section-header img{width: 48px;height: 48px;}
+
+  /* selo ainda maior no desktop */
+  .verificado{ width: 34px; height: 34px; }
+  .verificado svg{ width: 24px; height: 24px; }
+}
+@media(max-width:420px){
+  .menu{gap:8px;}
+  .menu a{padding: 9px 12px;}
+  .card{padding: 26px;}
 }
 </style>
 </head>
@@ -189,146 +406,169 @@ footer{
 <body>
 
 <div class="hero">
-    <div class="hero-container">
-        <img src="fabricio-benigno.jpg" alt="Fabricio Benigno">
-        <div class="hero-text">
-            <h1>Fabricio Benigno</h1>
-            <div class="autoridade">
-                Tutor de polo da UniCesumar, Profissional em Música e Soluções Digitais.
-            </div>
-            <p>Educação • Música • Audiovisual • Consultoria Digital</p>
-        </div>
+  <div class="hero-container">
+    <!-- Mantido exatamente como estava (não altera funcionalidade) -->
+    <img src="fabricio-benigno.jpg" alt="Fabricio Benigno">
+    <div class="hero-text">
+
+      <!-- Nome + verificado clicável para Instagram -->
+      <h1 class="nome-verificado">
+        Fabricio Benigno
+        <a class="verificado-link"
+           href="https://www.instagram.com/fabricio_benigno?igsh=eHkydDlxMG0yd2t2"
+           target="_blank"
+           rel="noopener"
+           aria-label="Abrir Instagram de Fabricio Benigno">
+          <span class="verificado" title="Abrir Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 2.5l2.5 1.2 2.7-.4 1.6 2.2 2.6 1 .2 2.8 1.8 2.1-1.8 2.1-.2 2.8-2.6 1-1.6 2.2-2.7-.4L12 21.5l-2.5-1.2-2.7.4-1.6-2.2-2.6-1-.2-2.8L.6 12l1.8-2.1.2-2.8 2.6-1 1.6-2.2 2.7.4L12 2.5z"></path>
+              <path d="M10.3 12.7l-1.4-1.4-1.4 1.4 2.8 2.8 6-6-1.4-1.4-4.6 4.6z"></path>
+            </svg>
+          </span>
+        </a>
+      </h1>
+
+      <div class="autoridade">
+        Tutor de polo da UniCesumar, Profissional em Música e Soluções Digitais.
+      </div>
+      <p>Educação • Música • Audiovisual • Consultoria Digital</p>
     </div>
+  </div>
 </div>
 
 <nav>
-    <div class="menu">
-        <a href="#musica"><img src="musica.png">Música</a>
-        <a href="#inscreva-se"><img src="icone.ico">Inscreva-se</a>
-        <a href="#audiovisual"><img src="audiovisual.png">Audiovisual</a>
-        <a href="#digital"><img src="solucoes.png">Soluções</a>
-        <a href="#parcerias"><img src="parcerias.png">Parcerias</a>
-        <!-- Redes sociais com ícone + nome -->
-        <a href="https://www.instagram.com/fabricio_benigno?igsh=eHkydDlxMG0yd2t2" target="_blank">
-            <img src="instagram.ico" alt="Instagram">Instagram
-        </a>
-        <a href="https://www.youtube.com/@fabriciobenigno4271" target="_blank">
-            <img src="youtube.png" alt="YouTube">YouTube
-        </a>
-    </div>
+  <div class="menu">
+    <a href="#musica"><img src="musica.png">Música</a>
+    <a href="#inscreva-se"><img src="icone.ico">Inscreva-se</a>
+    <a href="#audiovisual"><img src="audiovisual.png">Audiovisual</a>
+    <a href="#digital"><img src="solucoes.png">Soluções</a>
+    <a href="#parcerias"><img src="parcerias.png">Parcerias</a>
+
+    <!-- Redes sociais com ícone + nome -->
+    <a href="https://www.instagram.com/fabricio_benigno?igsh=eHkydDlxMG0yd2t2" target="_blank">
+      <img src="instagram.ico" alt="Instagram">Instagram
+    </a>
+    <a href="https://www.youtube.com/@fabriciobenigno4271" target="_blank">
+      <img src="youtube.png" alt="YouTube">YouTube
+    </a>
+  </div>
 </nav>
 
 <section id="inscreva-se" class="institucional">
-    <div class="section-header">
-        <img src="icone.png" class="icone-secao">
-        <h2>Inscreva-se</h2>
+  <div class="section-header">
+    <img src="icone.png" class="icone-secao">
+    <h2>Inscreva-se</h2>
+  </div>
+  <div class="card">
+    <p>
+      Atuo como tutor de polo da UniCesumar, oferecendo suporte aos alunos durante todo o percurso acadêmico,
+      incluindo orientação sobre matrícula, esclarecimento de dúvidas e acompanhamento das etapas do curso,
+      garantindo uma experiência organizada e eficiente.
+    </p>
+    <div class="buttons">
+      <a href="https://fabriciobenigno.github.io/Orienta-o-/" target="_blank">
+        Faça aqui sua matrícula
+      </a>
     </div>
-    <div class="card">
-        <p>
-            Atuo como tutor de polo da UniCesumar, oferecendo suporte aos alunos durante todo o percurso acadêmico, incluindo orientação sobre matrícula, esclarecimento de dúvidas e acompanhamento das etapas do curso, garantindo uma experiência organizada e eficiente.
-        </p>
-        <div class="buttons">
-            <a href="https://fabriciobenigno.github.io/Orienta-o-/" target="_blank">
-                Faça aqui sua matrícula
-            </a>
-        </div>
-    </div>
+  </div>
 </section>
 
 <section id="musica">
-    <div class="section-header">
-        <img src="musica.png" class="icone-secao">
-        <h2>Música</h2>
+  <div class="section-header">
+    <img src="musica.png" class="icone-secao">
+    <h2>Música</h2>
+  </div>
+  <div class="card">
+    <p>
+      Atuo com apresentações musicais profissionais para eventos sociais e culturais, oferecendo planejamento
+      de repertório, produção e execução musical personalizada, garantindo qualidade técnica e experiência marcante.
+    </p>
+    <div class="buttons">
+      <a href="https://wa.me/5585996886661?text=oii!%20quero%20mais%20informações%20para%20fechar%20uma%20apresentação%20com%20você" target="_blank">
+        Contratar Agora
+      </a>
     </div>
-    <div class="card">
-        <p>
-            Atuo com apresentações musicais profissionais para eventos sociais e culturais, oferecendo planejamento de repertório, produção e execução musical personalizada, garantindo qualidade técnica e experiência marcante.
-        </p>
-        <div class="buttons">
-            <a href="https://wa.me/5585996886661?text=oii!%20quero%20mais%20informações%20para%20fechar%20uma%20apresentação%20com%20você" target="_blank">
-                Contratar Agora
-            </a>
-        </div>
-    </div>
+  </div>
 </section>
 
 <section id="audiovisual">
-    <div class="section-header">
-        <img src="audiovisual.png" class="icone-secao">
-        <h2>Produção Audiovisual</h2>
+  <div class="section-header">
+    <img src="audiovisual.png" class="icone-secao">
+    <h2>Produção Audiovisual</h2>
+  </div>
+  <div class="card">
+    <p>
+      Produção e edição de conteúdos audiovisuais para projetos musicais e institucionais, com identidade visual
+      consistente, qualidade técnica e alinhamento às necessidades de cada projeto.
+    </p>
+    <div class="buttons">
+      <a href="https://wa.me/5585996886661?text=oii!%20quero%20mais%20informações%20para%20a%20produção%20de%20um%20video%20que%20quero%20fazer" target="_blank">
+        Solicitar Produção
+      </a>
     </div>
-    <div class="card">
-        <p>
-            Produção e edição de conteúdos audiovisuais para projetos musicais e institucionais, com identidade visual consistente, qualidade técnica e alinhamento às necessidades de cada projeto.
-        </p>
-        <div class="buttons">
-            <a href="https://wa.me/5585996886661?text=oii!%20quero%20mais%20informações%20para%20a%20produção%20de%20um%20video%20que%20quero%20fazer" target="_blank">
-                Solicitar Produção
-            </a>
-        </div>
-    </div>
+  </div>
 </section>
 
 <section id="digital">
-    <div class="section-header">
-        <img src="solucoes.png" class="icone-secao">
-        <h2>Soluções Digitais</h2>
+  <div class="section-header">
+    <img src="solucoes.png" class="icone-secao">
+    <h2>Soluções Digitais</h2>
+  </div>
+  <div class="card">
+    <p>
+      Consultoria em soluções digitais, incluindo criação e otimização de sites, estratégias digitais e presença online
+      profissional, voltadas para instituições, profissionais e projetos que buscam resultados práticos.
+    </p>
+    <div class="buttons">
+      <a href="https://wa.me/5585996886661?text=oii!%20tenho%20ideias%20para%20um%20site,%20pode%20me%20ajudar%20?" target="_blank">
+        Solicitar Consultoria
+      </a>
     </div>
-    <div class="card">
-        <p>
-            Consultoria em soluções digitais, incluindo criação e otimização de sites, estratégias digitais e presença online profissional, voltadas para instituições, profissionais e projetos que buscam resultados práticos.
-        </p>
-        <div class="buttons">
-            <a href="https://wa.me/5585996886661?text=oii!%20tenho%20ideias%20para%20um%20site,%20pode%20me%20ajudar%20?" target="_blank">
-                Solicitar Consultoria
-            </a>
-        </div>
-    </div>
+  </div>
 </section>
 
 <section id="parcerias">
-    <div class="section-header">
-        <img src="parcerias.png" class="icone-secao">
-        <h2>Parcerias</h2>
+  <div class="section-header">
+    <img src="parcerias.png" class="icone-secao">
+    <h2>Parcerias</h2>
+  </div>
+  <div class="card">
+    <p>
+      Aberto a parcerias estratégicas em Música e Soluções Digitais, com foco em ampliar alcance, criar experiências de valor
+      e apoiar projetos institucionais ou culturais.
+    </p>
+    <div class="buttons">
+      <a href="https://wa.me/5585996886661?text=oii!%20quero%20propor%20uma%20parceria" target="_blank">
+        Propor Parceria
+      </a>
     </div>
-    <div class="card">
-        <p>
-            Aberto a parcerias estratégicas em Música e Soluções Digitais, com foco em ampliar alcance, criar experiências de valor e apoiar projetos institucionais ou culturais.
-        </p>
-        <div class="buttons">
-            <a href="https://wa.me/5585996886661?text=oii!%20quero%20propor%20uma%20parceria" target="_blank">
-                Propor Parceria
-            </a>
-        </div>
-    </div>
+  </div>
 </section>
 
 <footer>
-    © 2026 Fabricio Benigno<br>
-    Música • Educação • Audiovisual • Soluções Digitais
+  © 2026 Fabricio Benigno<br>
+  Música • Educação • Audiovisual • Soluções Digitais
 </footer>
 
-<a href="https://wa.me/5585921695620?text=oii!%20quero%20mais%20informações%20sobre%20o%20curso%20***********" target="_blank" class="whatsapp-float" title="Faça aqui sua matrícula">
-    <img src="icone.ico" alt="Faça aqui sua matrícula">
+<a href="https://wa.me/5585921695620?text=oii!%20quero%20mais%20informações%20sobre%20o%20curso%20***********"
+   target="_blank"
+   class="whatsapp-float"
+   title="Faça aqui sua matrícula">
+  <img src="icone.ico" alt="Faça aqui sua matrícula">
 </a>
 
 <script>
 const sections = document.querySelectorAll("section");
 window.addEventListener("scroll", () => {
-    const trigger = window.innerHeight * 0.85;
-    sections.forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        if(top < trigger){
-            section.classList.add("visible");
-        }
-    });
+  const trigger = window.innerHeight * 0.85;
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if(top < trigger){
+      section.classList.add("visible");
+    }
+  });
 });
 </script>
 
 </body>
 </html>
-
-
-
-
-
