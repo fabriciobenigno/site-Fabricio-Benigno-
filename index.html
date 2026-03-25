@@ -3,42 +3,53 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fabricio Benigno | Música • Educação • Audiovisual • Soluções Digitais</title>
 
-<!-- Mantém seus ativos (não altera funcionalidades) -->
+<title>Fabricio Benigno | Música • Educação • Audiovisual • Soluções Digitais</title>
+<meta name="description" content="Conheça o trabalho de Fabricio Benigno nas áreas de educação, música, audiovisual, soluções digitais e projetos profissionais." />
+
+<!-- Favicon -->
 <link rel="icon" href="logotipo.ico" />
 <link rel="shortcut icon" href="logo.ico" />
 
-<!-- Fonte moderna (não altera funcionalidades do site) -->
+<!-- Open Graph / WhatsApp / Facebook / Instagram -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="Fabricio Benigno | Música • Educação • Audiovisual • Soluções Digitais" />
+<meta property="og:description" content="Conheça o trabalho de Fabricio Benigno nas áreas de educação, música, audiovisual, soluções digitais e projetos profissionais." />
+<meta property="og:url" content="https://fabriciobenigno.com/" />
+<meta property="og:site_name" content="Fabricio Benigno" />
+<meta property="og:image" content="https://fabriciobenigno.com/minhafoto.jpeg" />
+<meta property="og:image:secure_url" content="https://fabriciobenigno.com/minhafoto.jpeg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Foto de Fabricio Benigno" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Fabricio Benigno | Música • Educação • Audiovisual • Soluções Digitais" />
+<meta name="twitter:description" content="Conheça o trabalho de Fabricio Benigno nas áreas de educação, música, audiovisual, soluções digitais e projetos profissionais." />
+<meta name="twitter:image" content="https://fabriciobenigno.com/minhafoto.jpeg" />
+
+<!-- Fonte -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
 :root{
-  /* Base (mantendo seu azul) */
   --azul:#0b3d91;
   --azul-escuro:#082c66;
-
-  /* Neutros mais “premium” */
   --fundo:#f4f7fb;
   --card:#ffffff;
   --texto:#0f172a;
   --texto-sec:#475569;
   --borda:#e2e8f0;
-
-  /* Acento sutil */
   --azul-claro:#60a5fa;
-
-  /* Layout */
   --max:1120px;
   --raio:16px;
-
-  /* Sombra profissional (2 níveis) */
   --s1: 0 10px 30px rgba(2, 6, 23, 0.06);
   --s2: 0 18px 50px rgba(2, 6, 23, 0.10);
-
-  /* Transições */
   --t: 220ms cubic-bezier(.2,.8,.2,1);
 }
 
@@ -51,14 +62,10 @@ body{
   line-height: 1.7;
 }
 
-/* Melhor leitura e “acabamento” */
 a{color:inherit;}
 img{max-width:100%;display:block;}
 ::selection{background: rgba(96,165,250,.25);}
 
-/* =========================
-   HERO (mais premium)
-========================= */
 .hero{
   position:relative;
   color:#fff;
@@ -73,8 +80,7 @@ img{max-width:100%;display:block;}
   content:"";
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(180deg, rgba(2,6,23,.18), rgba(2,6,23,.32));
+  background: linear-gradient(180deg, rgba(2,6,23,.18), rgba(2,6,23,.32));
   pointer-events:none;
 }
 .hero-container{
@@ -93,11 +99,8 @@ img{max-width:100%;display:block;}
   height: 156px;
   object-fit: cover;
   border-radius: 999px;
-
-  /* Anel duplo + glow suave */
   border: 2px solid rgba(255,255,255,.30);
   outline: 8px solid rgba(255,255,255,.10);
-
   box-shadow:
     0 22px 60px rgba(0,0,0,.35),
     0 0 0 1px rgba(255,255,255,.08) inset;
@@ -118,9 +121,6 @@ img{max-width:100%;display:block;}
   opacity: .92;
 }
 
-/* =========================
-   NAV (sticky, sem quebrar nada)
-========================= */
 nav{
   position: sticky;
   top: 0;
@@ -142,19 +142,15 @@ nav{
   display:flex;
   align-items:center;
   gap: 9px;
-
   padding: 9px 14px;
   font-size: 13px;
   font-weight: 600;
   text-decoration:none;
-
   color: var(--texto);
   border: 1px solid rgba(226,232,240,.9);
   border-radius: 999px;
-
   background: rgba(255,255,255,.9);
   box-shadow: 0 1px 0 rgba(2,6,23,.02);
-
   transition: transform var(--t), background var(--t), color var(--t), border-color var(--t), box-shadow var(--t);
 }
 .menu a img{
@@ -172,14 +168,10 @@ nav{
   outline-offset: 2px;
 }
 
-/* =========================
-   SEÇÕES (hierarquia + acabamento)
-========================= */
 section{
   padding: 64px 20px;
   max-width: var(--max);
   margin:auto;
-
   opacity:0;
   transform: translateY(18px);
   transition: opacity 700ms cubic-bezier(.2,.8,.2,1), transform 700ms cubic-bezier(.2,.8,.2,1);
@@ -214,15 +206,11 @@ section h2::after{
   background: linear-gradient(90deg, rgba(96,165,250,.85), rgba(11,61,145,.15));
 }
 
-/* Fundo institucional mais refinado */
 .institucional{
   background: linear-gradient(180deg, rgba(238,242,248,.9), rgba(244,247,251,0));
   border-radius: calc(var(--raio) + 8px);
 }
 
-/* =========================
-   CARD (profissional)
-========================= */
 .card{
   background: var(--card);
   padding: 34px;
@@ -241,31 +229,22 @@ section h2::after{
   color: var(--texto-sec);
 }
 
-/* =========================
-   BOTÕES (CTA forte e elegante)
-========================= */
 .buttons{margin-top: 18px;}
 .buttons a{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-
   min-height: 44px;
   padding: 10px 18px;
-
   font-size: 14px;
   font-weight: 700;
   letter-spacing: .15px;
-
   border-radius: 999px;
   text-decoration:none;
-
-  /* Primário (mais profissional) */
   background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
   color: #fff;
   border: 1px solid rgba(11,61,145,.15);
   box-shadow: 0 10px 22px rgba(11,61,145,.18);
-
   transition: transform var(--t), box-shadow var(--t), filter var(--t);
 }
 .buttons a:hover{
@@ -279,26 +258,19 @@ section h2::after{
   outline-offset: 3px;
 }
 
-/* =========================
-   BOTÃO FLUTUANTE (acabamento premium)
-========================= */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
   right:20px;
-
   background:#25D366;
   width:56px;
   height:56px;
   border-radius:999px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   box-shadow: 0 14px 34px rgba(2,6,23,.22);
   border: 2px solid rgba(255,255,255,.85);
-
   z-index:999;
   transition: transform var(--t), box-shadow var(--t), filter var(--t);
 }
@@ -309,9 +281,6 @@ section h2::after{
 }
 .whatsapp-float img{width:26px;height:26px;}
 
-/* =========================
-   FOOTER (clean)
-========================= */
 footer{
   text-align:center;
   padding: 30px 20px;
@@ -321,16 +290,12 @@ footer{
   border-top: 1px solid rgba(226,232,240,.9);
 }
 
-/* =========================
-   VERIFICADO (clicável para Instagram) - MAIOR
-========================= */
 .nome-verificado{
   display: inline-flex;
   align-items: center;
-  gap: 12px; /* mais respiro */
+  gap: 12px;
 }
 
-/* Link do verificado (sem sublinhado e com interação) */
 .verificado-link{
   display: inline-flex;
   align-items: center;
@@ -359,8 +324,8 @@ footer{
   height: 22px;
 }
 
-.verificado svg path:first-child{ fill: #1d9bf0; } /* azul do “verificado” */
-.verificado svg path:last-child{ fill: #ffffff; }  /* check branco */
+.verificado svg path:first-child{ fill: #1d9bf0; }
+.verificado svg path:last-child{ fill: #ffffff; }
 
 .verificado-link:hover .verificado{
   transform: translateY(1px) scale(1.03);
@@ -372,9 +337,6 @@ footer{
   outline-offset: 4px;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
 @media(min-width:768px){
   .hero{padding: 112px 20px 92px;}
   .hero-container{
@@ -390,8 +352,6 @@ footer{
   section{padding: 72px 20px;}
   .section-header{margin-bottom: 22px;}
   .section-header img{width: 48px;height: 48px;}
-
-  /* selo ainda maior no desktop */
   .verificado{ width: 34px; height: 34px; }
   .verificado svg{ width: 24px; height: 24px; }
 }
@@ -407,11 +367,8 @@ footer{
 
 <div class="hero">
   <div class="hero-container">
-    <!-- Mantido exatamente como estava (não altera funcionalidade) -->
     <img src="fabricio-benigno.jpg" alt="Fabricio Benigno">
     <div class="hero-text">
-
-      <!-- Nome + verificado clicável para Instagram -->
       <h1 class="nome-verificado">
         Fabricio Benigno
         <a class="verificado-link"
@@ -438,17 +395,13 @@ footer{
 
 <nav>
   <div class="menu">
-    <a href="#musica"><img src="musica.png">Música</a>
-    <a href="#inscreva-se"><img src="icone.ico">Inscreva-se</a>
-    <a href="#audiovisual"><img src="audiovisual.png">Audiovisual</a>
-    <a href="#digital"><img src="solucoes.png">Soluções</a>
-    <a href="#parcerias"><img src="parcerias.png">Parcerias</a>
-
-    <!-- Redes sociais com ícone + nome -->
-    <a href="https://www.instagram.com/fabricio_benigno?igsh=eHkydDlxMG0yd2t2" target="_blank">
-      <img src="instagram.ico" alt="Instagram">Instagram
-    </a>
-    <a href="https://www.youtube.com/@fabriciobenigno4271" target="_blank">
+    <a href="#musica"><img src="musica.png" alt="Música">Música</a>
+    <a href="#inscreva-se"><img src="icone.ico" alt="Inscreva-se">Inscreva-se</a>
+    <a href="#instagram"><img src="instagram.ico" alt="Instagram">Instagram</a>
+    <a href="#audiovisual"><img src="audiovisual.png" alt="Audiovisual">Audiovisual</a>
+    <a href="#digital"><img src="solucoes.png" alt="Soluções">Soluções</a>
+    <a href="#parcerias"><img src="parcerias.png" alt="Parcerias">Parcerias</a>
+    <a href="https://www.youtube.com/@fabriciobenigno4271" target="_blank" rel="noopener">
       <img src="youtube.png" alt="YouTube">YouTube
     </a>
   </div>
@@ -456,7 +409,7 @@ footer{
 
 <section id="inscreva-se" class="institucional">
   <div class="section-header">
-    <img src="icone.png" class="icone-secao">
+    <img src="icone.png" class="icone-secao" alt="Ícone Inscreva-se">
     <h2>Inscreva-se</h2>
   </div>
   <div class="card">
@@ -466,8 +419,27 @@ footer{
       garantindo uma experiência organizada e eficiente.
     </p>
     <div class="buttons">
-      <a href="https://fabriciobenigno.github.io/Orienta-o-/" target="_blank">
+      <a href="https://fabriciobenigno.github.io/Orienta-o-/" target="_blank" rel="noopener">
         Faça aqui sua matrícula
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="instagram">
+  <div class="section-header">
+    <img src="instagram.ico" class="icone-secao" alt="Ícone Instagram">
+    <h2>Instagram</h2>
+  </div>
+  <div class="card">
+    <p>
+      No meu Instagram, compartilho conteúdos sobre minha atuação profissional, projetos musicais,
+      bastidores, produções audiovisuais e iniciativas ligadas à educação e soluções digitais,
+      oferecendo uma visão mais próxima do meu trabalho e da minha trajetória.
+    </p>
+    <div class="buttons">
+      <a href="https://www.instagram.com/fabricio_benigno?igsh=eHkydDlxMG0yd2t2" target="_blank" rel="noopener">
+        Acessar Instagram
       </a>
     </div>
   </div>
@@ -475,7 +447,7 @@ footer{
 
 <section id="musica">
   <div class="section-header">
-    <img src="musica.png" class="icone-secao">
+    <img src="musica.png" class="icone-secao" alt="Ícone Música">
     <h2>Música</h2>
   </div>
   <div class="card">
@@ -484,7 +456,7 @@ footer{
       de repertório, produção e execução musical personalizada, garantindo qualidade técnica e experiência marcante.
     </p>
     <div class="buttons">
-      <a href="https://wa.me/5585996886661?text=oii!%20quero%20mais%20informações%20para%20fechar%20uma%20apresentação%20com%20você" target="_blank">
+      <a href="https://wa.me/5585996886661?text=oii!%20quero%20mais%20informações%20para%20fechar%20uma%20apresentação%20com%20você" target="_blank" rel="noopener">
         Contratar Agora
       </a>
     </div>
@@ -493,7 +465,7 @@ footer{
 
 <section id="audiovisual">
   <div class="section-header">
-    <img src="audiovisual.png" class="icone-secao">
+    <img src="audiovisual.png" class="icone-secao" alt="Ícone Audiovisual">
     <h2>Produção Audiovisual</h2>
   </div>
   <div class="card">
@@ -502,7 +474,7 @@ footer{
       consistente, qualidade técnica e alinhamento às necessidades de cada projeto.
     </p>
     <div class="buttons">
-      <a href="https://wa.me/5585996886661?text=oii!%20quero%20mais%20informações%20para%20a%20produção%20de%20um%20video%20que%20quero%20fazer" target="_blank">
+      <a href="https://wa.me/5585996886661?text=oii!%20quero%20mais%20informações%20para%20a%20produção%20de%20um%20video%20que%20quero%20fazer" target="_blank" rel="noopener">
         Solicitar Produção
       </a>
     </div>
@@ -511,7 +483,7 @@ footer{
 
 <section id="digital">
   <div class="section-header">
-    <img src="solucoes.png" class="icone-secao">
+    <img src="solucoes.png" class="icone-secao" alt="Ícone Soluções Digitais">
     <h2>Soluções Digitais</h2>
   </div>
   <div class="card">
@@ -520,7 +492,7 @@ footer{
       profissional, voltadas para instituições, profissionais e projetos que buscam resultados práticos.
     </p>
     <div class="buttons">
-      <a href="https://wa.me/5585996886661?text=oii!%20tenho%20ideias%20para%20um%20site,%20pode%20me%20ajudar%20?" target="_blank">
+      <a href="https://wa.me/5585996886661?text=oii!%20tenho%20ideias%20para%20um%20site,%20pode%20me%20ajudar%20?" target="_blank" rel="noopener">
         Solicitar Consultoria
       </a>
     </div>
@@ -529,7 +501,7 @@ footer{
 
 <section id="parcerias">
   <div class="section-header">
-    <img src="parcerias.png" class="icone-secao">
+    <img src="parcerias.png" class="icone-secao" alt="Ícone Parcerias">
     <h2>Parcerias</h2>
   </div>
   <div class="card">
@@ -538,7 +510,7 @@ footer{
       e apoiar projetos institucionais ou culturais.
     </p>
     <div class="buttons">
-      <a href="https://wa.me/5585996886661?text=oii!%20quero%20propor%20uma%20parceria" target="_blank">
+      <a href="https://wa.me/5585996886661?text=oii!%20quero%20propor%20uma%20parceria" target="_blank" rel="noopener">
         Propor Parceria
       </a>
     </div>
@@ -552,6 +524,7 @@ footer{
 
 <a href="https://wa.me/5585921695620?text=oii!%20quero%20mais%20informações%20sobre%20o%20curso%20***********"
    target="_blank"
+   rel="noopener"
    class="whatsapp-float"
    title="Faça aqui sua matrícula">
   <img src="icone.ico" alt="Faça aqui sua matrícula">
@@ -559,15 +532,19 @@ footer{
 
 <script>
 const sections = document.querySelectorAll("section");
-window.addEventListener("scroll", () => {
+
+function revealSections() {
   const trigger = window.innerHeight * 0.85;
   sections.forEach(section => {
     const top = section.getBoundingClientRect().top;
-    if(top < trigger){
+    if (top < trigger) {
       section.classList.add("visible");
     }
   });
-});
+}
+
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
 </script>
 
 </body>
